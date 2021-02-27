@@ -1,6 +1,6 @@
 {
-  "name": "git-cz",
-  "version": "4.5.0",
+  "name": "@jeromefitz/git-cz",
+  "version": "4.6.0-develop.0",
   "description": "Semantic emojified git commit, git-cz.",
   "main": "dist/cz.js",
   "bin": {
@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/streamich/git-cz.git"
+    "url": "git+ssh://git@github.com/jeromefitz/git-cz.git"
   },
-  "homepage": "https://github.com/streamich/git-cz",
+  "homepage": "https://github.com/jeromefitz/git-cz",
   "license": "Unlicense",
   "scripts": {
     "lint": "yarn eslint",
