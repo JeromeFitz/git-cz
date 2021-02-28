@@ -24,3 +24,11 @@ yarn.lock
 .github/
 .husky/
 scripts/
+.eslintignore
+.eslintrc.js
+.git-cz.json
+.prettierignore
+.prettierignore_staged
+release.config.js
+renovate.js
+data/
