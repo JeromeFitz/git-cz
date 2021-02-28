@@ -24,7 +24,7 @@
     "build:readme": "mmarkdown",
     "build": "yarn build:cli && yarn build:cz && yarn build:themes",
     "clean": "rimraf dist binaries",
-    "fetch:gitmojis": "node ./scripts/fetchGitmoji.js",
+    "fetch:gitmojis": "node ./scripts/fetchGitmoji.js && yarn lint:fix",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
     "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
