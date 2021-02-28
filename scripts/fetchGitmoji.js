@@ -24,4 +24,6 @@ const fetchGitmoji = async () => {
   });
 };
 
+fetchGitmoji();
+
 module.exports = fetchGitmoji;
