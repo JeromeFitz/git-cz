@@ -7,7 +7,7 @@ script:
   - yarn build:binaries
   - yarn test
 node_js:
-  - '10'
+  - '^10.18.0'
   - '12'
   - '14'
 after_success:
