@@ -29,6 +29,7 @@ scripts/
 .git-cz.json
 .prettierignore
 .prettierignore_staged
+.prettierrc.js
 release.config.js
-renovate.js
+renovate.json
 data/
