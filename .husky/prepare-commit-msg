@@ -2,4 +2,4 @@
 
 yarn pretty-quick --staged
 exec < /dev/tty
-node ./lib/cli.js --hook --theme gitmoji || true
+node ./lib/cli.js --hook || true
