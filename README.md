@@ -77,6 +77,7 @@ module.exports = {
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
   scopes: [],
+  theme: 'default,
   types: {
     chore: {
       description: 'Build process or auxiliary tool changes',
@@ -189,8 +190,6 @@ This allows the message to be easier to read on GitHub as well as in various git
 
 By default the subject format is: `{type}{scope}: {emoji}{subject}`
 
-You can configure your own using the following fields:
-
 ```bash
 --format "{type}{scope}: {emoji}{subject}"
 ```
@@ -201,7 +200,18 @@ You can configure your own using the following fields:
 }
 ```
 
+You can configure your own using the following fields:
+
+- `{emoji}`
+- `{scope}`
+- `{subject}`
+- `{type}`
+
+These are the _only_ fields that will be dynamically replaced by `git-cz`.
+
 These are not `${type}` so in your configuration if you need to pass dynamically values to `format` you can while keeping these separate. Helpful for when adding ` [skip ci]` to `format` conditionally.
+
+📝️ Note: If your configuration file _is_ dynamic and you want to override these change yours at run time to `${type}` 😅️. These fields are only replaced _if_ they exist. Heck, you can have a format of: `format: "static(hard): code value"` if you really want (please do not).
 
 📝️ Note: If you want to keep emojis in the cli and not in your code commits you can do so with:
 
@@ -243,7 +253,9 @@ A theme override for [gitmoji](https://gitmoji.dev/) is available as an **overri
 }
 ```
 
-Note: `chore` is provided as a `git-cz` fallback for those that enjoy using it. Otherwise all current `git-cz` `default` have a 1:1 map to `gitmoji`.
+📝️ Note: `chore` is provided as a `git-cz` fallback for those that enjoy using it. Otherwise all current `git-cz` `default` have a 1:1 map to `gitmoji`.
+
+📝️ Note: This will override default types along with their emojis.
 
 ### Type
 
