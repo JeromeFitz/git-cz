@@ -484,7 +484,11 @@ module.exports = {
     ],
     'sort-vars': 2,
     'space-before-blocks': [2, 'always'],
-    'space-before-function-paren': [2, 'always'],
+
+    // @question this contradicts prettier
+    // 'space-before-function-paren': [2, 'always'],
+    'space-before-function-paren': [2, 'never'],
+
     'space-in-parens': [2, 'never'],
     'space-infix-ops': 2,
     'space-unary-ops': [
