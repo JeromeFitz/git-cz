@@ -187,12 +187,63 @@ This allows the message to be easier to read on GitHub as well as in various git
 
 ### Format
 
-By default the subject format is: `{type}{scope}: {subject}`
+By default the subject format is: `{type}{scope}: {emoji}{subject}`
 
-Configuring the `format` field in `.git-cz.json` you can customize your own:
+You can configure your own using the following fields:
 
-- `{type}{scope}: {emoji}{subject}`
-- `{emoji}{scope} {subject}`
+```bash
+--format "{type}{scope}: {emoji}{subject}"
+```
+
+```json
+{
+  "format": "{type}{scope}: {subject}"
+}
+```
+
+These are not `${type}` so in your configuration if you need to pass dynamically values to `format` you can while keeping these separate. Helpful for when adding ` [skip ci]` to `format` conditionally.
+
+📝️ Note: If you want to keep emojis in the cli and not in your code commits you can do so with:
+
+```bash
+--disable-emoji --format "{type}{scope}: {subject}"
+```
+
+Have fun in your console if you can't in your codebase. 🤣️
+
+### Theme
+
+`git-cz` provides two themes out of the box: `default` and `gitmoji`.
+
+Themes are an opt-in feature. If noting is provided for `theme` it will fallback to `default`.
+
+### Default
+
+No customizations needed. These are the emojis you know and love from `git-cz`
+
+- 🎸️ feat
+- 💡 refactor
+- etc.
+
+### Gitmoji
+
+A theme override for [gitmoji](https://gitmoji.dev/) is available as an **override**.
+
+- ✨️ feat
+- ♻️ refactor
+- etc.
+
+```bash
+-- theme gitmoji
+```
+
+```json
+{
+  "theme": "gitmoji"
+}
+```
+
+Note: `chore` is provided as a `git-cz` fallback for those that enjoy using it. Otherwise all current `git-cz` `default` have a 1:1 map to `gitmoji`.
 
 ### Type
 
@@ -231,14 +282,6 @@ Select the packages the commit affected.
 ### Footer
 
 The footer is the place to reference any tasks related to this commit.
-
-### gitmoji
-
-Some people prefer [gitmoji](https://gitmoji.dev/) and `git-cz` provides an **override** that allows you to plug in
-
-#### Please Note
-
-This is further customizable via your own `changelog.config.js`. Feel free to look at this example at how to customize your own `changelog.config.js`.
 
 ## Why this Fork
 
