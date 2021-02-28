@@ -8,7 +8,7 @@ const gitmojiUrl =
 const dataDirectory = path.join(__dirname, '..', 'data');
 const dataFilename = path.resolve(dataDirectory, 'gitmojis.json');
 
-const getGitmojis = async () => {
+const fetchGitmoji = async () => {
   const response = await fetch(gitmojiUrl);
   const json = await response.json();
   const data = await JSON.stringify(json, null, 4);
@@ -24,6 +24,4 @@ const getGitmojis = async () => {
   });
 };
 
-getGitmojis();
-
-module.exports = getGitmojis;
+module.exports = fetchGitmoji;
