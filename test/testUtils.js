@@ -10,10 +10,7 @@ exports.keys = {
 exports.runCLI = (args = []) => {
   const CLI_PATH = path.join(__dirname, '/../lib/cli');
 
-  const {promise, stdin} = spawn('node', [
-    CLI_PATH,
-    ...args
-  ]);
+  const {promise, stdin} = spawn('node', [CLI_PATH, ...args]);
 
   const getResult = async () => {
     const {stdout} = await promise;
