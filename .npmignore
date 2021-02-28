@@ -21,16 +21,15 @@ yarn.lock
 /docs/
 # fork
 .env
-.github/
-.husky/
-scripts/
 .eslintignore
 .eslintrc.js
-.git-cz.json
+.github/
+.husky/
 .prettierignore
 .prettierignore_staged
 .prettierrc.js
+data/
 lint-staged.config.js
 release.config.js
 renovate.json
-data/
+scripts/
