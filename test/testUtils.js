@@ -4,7 +4,7 @@ const spawn = require('spawncommand');
 exports.keys = {
   down: '\u001B\u005B\u0042',
   enter: '\r',
-  up: '\u001B\u005B\u0041'
+  up: '\u001B\u005B\u0041',
 };
 
 exports.runCLI = (args = []) => {
@@ -31,6 +31,6 @@ exports.runCLI = (args = []) => {
 
   return {
     getResult,
-    write
+    write,
   };
 };

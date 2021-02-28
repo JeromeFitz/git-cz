@@ -7,7 +7,7 @@ module.exports = {
   branches: [
     {name: 'main', prerelease: 'main'},
     {name: 'master'},
-    {name: 'canary', prerelease: 'canary'}
+    {name: 'canary', prerelease: 'canary'},
   ],
   extends: [],
   plugins: [
@@ -15,19 +15,19 @@ module.exports = {
       '@semantic-release/commit-analyzer',
       {
         parserOpts: {
-          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING']
-        }
-      }
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
+        },
+      },
     ],
     [
       '@semantic-release/release-notes-generator',
       {
         parserOpts: {
-          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING']
-        }
-      }
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
+        },
+      },
     ],
     '@semantic-release/npm',
-    '@semantic-release/git'
-  ]
+    '@semantic-release/git',
+  ],
 };

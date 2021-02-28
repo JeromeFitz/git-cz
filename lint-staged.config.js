@@ -9,7 +9,7 @@ module.exports = {
     return [
       `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${filenames}`,
       `eslint --no-ignore --max-warnings=0 --fix ${filenames}`,
-      `git add ${filenames}`
+      `git add ${filenames}`,
     ];
   },
 
@@ -18,7 +18,7 @@ module.exports = {
 
     return [
       `prettier --with-node-modules --ignore-path='./.prettierignore_staged' --write ${filenames}`,
-      `git add ${filenames}`
+      `git add ${filenames}`,
     ];
-  }
+  },
 };
