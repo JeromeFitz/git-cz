@@ -19,14 +19,7 @@ module.exports = {
         },
       },
     ],
-    [
-      '@semantic-release/release-notes-generator',
-      {
-        parserOpts: {
-          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
-        },
-      },
-    ],
+    '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
     '@semantic-release/git',
   ],
