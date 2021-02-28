@@ -1,8 +1,10 @@
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-
 # git-cz
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ![image](https://user-images.githubusercontent.com/9773803/49760520-fa6c6f00-fcc4-11e8-84c4-80727f071487.png)
+
+## Install
 
 ### Without installation
 
@@ -69,6 +71,7 @@ Below is default config:
 module.exports = {
   disableEmoji: false,
   format: '{type}{scope}: {emoji}{subject}',
+  gitmoji: false,
   list: ['test', 'feat', 'fix', 'chore', 'docs', 'refactor', 'style', 'ci', 'perf'],
   maxMessageLength: 64,
   minMessageLength: 3,
@@ -184,12 +187,63 @@ This allows the message to be easier to read on GitHub as well as in various git
 
 ### Format
 
-By default the subject format is: `{type}{scope}: {subject}`
+By default the subject format is: `{type}{scope}: {emoji}{subject}`
 
-Configuring the `format` field in `.git-cz.json` you can customize your own:
+You can configure your own using the following fields:
 
-- `{type}{scope}: {emoji}{subject}`
-- `{emoji}{scope} {subject}`
+```bash
+--format "{type}{scope}: {emoji}{subject}"
+```
+
+```json
+{
+  "format": "{type}{scope}: {subject}"
+}
+```
+
+These are not `${type}` so in your configuration if you need to pass dynamically values to `format` you can while keeping these separate. Helpful for when adding ` [skip ci]` to `format` conditionally.
+
+📝️ Note: If you want to keep emojis in the cli and not in your code commits you can do so with:
+
+```bash
+--disable-emoji --format "{type}{scope}: {subject}"
+```
+
+Have fun in your console if you can't in your codebase. 🤣️
+
+### Theme
+
+`git-cz` provides two themes out of the box: `default` and `gitmoji`.
+
+Themes are an opt-in feature. If noting is provided for `theme` it will fallback to `default`.
+
+### Default
+
+No customizations needed. These are the emojis you know and love from `git-cz`
+
+- 🎸️ feat
+- 💡 refactor
+- etc.
+
+### Gitmoji
+
+A theme override for [gitmoji](https://gitmoji.dev/) is available as an **override**.
+
+- ✨️ feat
+- ♻️ refactor
+- etc.
+
+```bash
+-- theme gitmoji
+```
+
+```json
+{
+  "theme": "gitmoji"
+}
+```
+
+Note: `chore` is provided as a `git-cz` fallback for those that enjoy using it. Otherwise all current `git-cz` `default` have a 1:1 map to `gitmoji`.
 
 ### Type
 
@@ -229,7 +283,7 @@ Select the packages the commit affected.
 
 The footer is the place to reference any tasks related to this commit.
 
-## Why this Fork?
+## Why this Fork
 
 ```bash
 npm i -g git-cz

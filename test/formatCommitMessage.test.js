@@ -14,6 +14,7 @@ const defaultConfig = {
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
   scopes: [],
+  theme: 'default',
   types: {
     chore: {
       description: 'Build process or auxiliary tool changes',
@@ -64,6 +65,35 @@ const defaultConfig = {
       description: 'Adding missing tests',
       emoji: '💍',
       value: 'test',
+    },
+  },
+};
+
+const themeTypes = {
+  gitmoji: {
+    chore: {
+      code: ':computer_disk:',
+      description: 'Changes that don’t modify src or test files',
+      emoji: '💽️',
+      entity: '&#x1f4bd;',
+      hidden: false,
+      name: 'computer-disk',
+      release: null,
+      section: 'Changes that don’t modify src or test files',
+      semver: null,
+      value: 'chore',
+    },
+    rip: {
+      code: ':coffin:',
+      description: 'Remove dead code.',
+      emoji: '⚰️',
+      entity: '&#x26B0;',
+      hidden: false,
+      name: 'coffin',
+      release: null,
+      section: 'Remove dead code.',
+      semver: null,
+      value: 'rip',
     },
   },
 };
@@ -144,5 +174,39 @@ describe('formatCommitMessage()', () => {
     });
 
     expect(message).equal('First commit :(init)feat [skip ci]');
+  });
+
+  it('theme => gitmoji (no difference with feat)', () => {
+    const theme = 'gitmoji';
+    const message = formatCommitMessage({
+      ...defaultState,
+      config: {
+        ...defaultConfig,
+        disableEmoji: true,
+        theme,
+      },
+    });
+
+    expect(message).equal('feat: First commit');
+  });
+
+  it('theme => gitmoji (unique type)', () => {
+    const theme = 'gitmoji';
+    const message = formatCommitMessage({
+      ...defaultState,
+      answers: {
+        ...defaultState.answers,
+        subject: 'Last commit',
+        type: 'rip',
+      },
+      config: {
+        ...defaultConfig,
+        disableEmoji: true,
+        theme,
+        types: themeTypes[theme],
+      },
+    });
+
+    expect(message).equal('rip: Last commit');
   });
 });
