@@ -1,5 +1,5 @@
 {
   "disableEmoji": false,
   "format": "{type}{scope}: {emoji}{subject}",
-  "gitmoji": false
+  "theme": "default"
 }
