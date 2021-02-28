@@ -2,13 +2,11 @@
 
 # git-cz
 
-
 ### Without installation
 
 ```shell
 npx git-cz
 ```
-
 
 ### Install globally standalone
 
@@ -16,7 +14,6 @@ npx git-cz
 npm install -g git-cz
 git-cz
 ```
-
 
 ### Install locally with Commitizen
 
@@ -33,7 +30,7 @@ npm install --save-dev git-cz
     "commitizen": {
       "path": "git-cz"
     }
-  },
+  }
 }
 ```
 
@@ -42,7 +39,6 @@ run:
 ```shell
 git cz
 ```
-
 
 ### Install globally with Commitizen
 
@@ -57,11 +53,9 @@ run:
 git cz
 ```
 
-
 ## Example
 
 ![](./docs/example.png)
-
 
 ## Custom config
 
@@ -72,11 +66,10 @@ in your repo. Below is default config:
 return scripts.config();
 ```
 
-
 ## Commit Message Format
 
-* A commit message consists of a **header**, **body** and **footer**.
-* The header has a **type** and a **subject**:
+- A commit message consists of a **header**, **body** and **footer**.
+- The header has a **type** and a **subject**:
 
 ```
 <type>[(<scope>)]: <emoji> <subject>
@@ -108,8 +101,8 @@ return scripts.types();
 
 The subject contains succinct description of the change:
 
-* Use the imperative, present tense: "change" not "changed" nor "changes"
-* No dot (.) at the end.
+- Use the imperative, present tense: "change" not "changed" nor "changes"
+- No dot (.) at the end.
 
 ### Body
 
@@ -127,8 +120,6 @@ Select the packages the commit affected.
 ### Footer
 
 The footer is the place to reference any tasks related to this commit.
-
-
 
 ## Why this Fork?
 

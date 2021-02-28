@@ -18,54 +18,54 @@ const defaultConfig = {
     chore: {
       description: 'Build process or auxiliary tool changes',
       emoji: '🤖',
-      value: 'chore'
+      value: 'chore',
     },
     ci: {
       description: 'CI related changes',
       emoji: '🎡',
-      value: 'ci'
+      value: 'ci',
     },
     docs: {
       description: 'Documentation only changes',
       emoji: '✏️',
-      value: 'docs'
+      value: 'docs',
     },
     feat: {
       description: 'A new feature',
       emoji: '🎸',
-      value: 'feat'
+      value: 'feat',
     },
     fix: {
       description: 'A bug fix',
       emoji: '🐛',
-      value: 'fix'
+      value: 'fix',
     },
     perf: {
       description: 'A code change that improves performance',
       emoji: '⚡️',
-      value: 'perf'
+      value: 'perf',
     },
     refactor: {
       description: 'A code change that neither fixes a bug or adds a feature',
       emoji: '💡',
-      value: 'refactor'
+      value: 'refactor',
     },
     release: {
       description: 'Create a release commit',
       emoji: '🏹',
-      value: 'release'
+      value: 'release',
     },
     style: {
       description: 'Markup, white-space, formatting, missing semi-colons...',
       emoji: '💄',
-      value: 'style'
+      value: 'style',
     },
     test: {
       description: 'Adding missing tests',
       emoji: '💍',
-      value: 'test'
-    }
-  }
+      value: 'test',
+    },
+  },
 };
 
 const defaultState = {
@@ -76,10 +76,10 @@ const defaultState = {
     lerna: '',
     scope: '',
     subject: 'First commit',
-    type: 'feat'
+    type: 'feat',
   },
   config: defaultConfig,
-  root: '/Users/vad/dev/git-cz'
+  root: '/Users/vad/dev/git-cz',
 };
 
 describe('formatCommitMessage()', () => {
@@ -88,8 +88,8 @@ describe('formatCommitMessage()', () => {
       ...defaultState,
       config: {
         ...defaultConfig,
-        disableEmoji: true
-      }
+        disableEmoji: true,
+      },
     });
 
     expect(message).equal('feat: First commit');
@@ -100,12 +100,12 @@ describe('formatCommitMessage()', () => {
       ...defaultState,
       answers: {
         ...defaultState.answers,
-        scope: 'init'
+        scope: 'init',
       },
       config: {
         ...defaultConfig,
-        disableEmoji: true
-      }
+        disableEmoji: true,
+      },
     });
 
     expect(message).equal('feat(init): First commit');
@@ -116,13 +116,13 @@ describe('formatCommitMessage()', () => {
       ...defaultState,
       answers: {
         ...defaultState.answers,
-        scope: 'init'
+        scope: 'init',
       },
       config: {
         ...defaultConfig,
         format: '{subject} :{scope}{type}',
-        disableEmoji: true
-      }
+        disableEmoji: true,
+      },
     });
 
     expect(message).equal('First commit :(init)feat');
@@ -134,13 +134,13 @@ describe('formatCommitMessage()', () => {
       ...defaultState,
       answers: {
         ...defaultState.answers,
-        scope: 'init'
+        scope: 'init',
       },
       config: {
         ...defaultConfig,
         format: `{subject} :{scope}{type}${isDynamic && ' [skip ci]'}`,
-        disableEmoji: true
-      }
+        disableEmoji: true,
+      },
     });
 
     expect(message).equal('First commit :(init)feat [skip ci]');

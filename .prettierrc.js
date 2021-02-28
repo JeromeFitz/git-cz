@@ -1,0 +1,11 @@
+/* eslint-disable filenames/match-regex */
+module.exports = {
+  arrowParens: 'always',
+  bracketSpacing: false,
+  endOfLine: 'auto',
+  printWidth: 85,
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
+};
