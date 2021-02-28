@@ -77,7 +77,7 @@ module.exports = {
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
   scopes: [],
-  theme: 'default,
+  theme: 'default',
   types: {
     chore: {
       description: 'Build process or auxiliary tool changes',
