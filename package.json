@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/git-cz",
-  "version": "5.0.0-canary.5",
+  "version": "5.0.0-canary.11",
   "description": "Semantic emojified git commit, git-cz.",
   "main": "dist/cz.js",
   "bin": {
@@ -23,7 +23,6 @@
     "build:readme": "mmarkdown",
     "build": "yarn build:cli && yarn build:cz",
     "clean": "rimraf dist binaries",
-    "fetch:gitmojis": "node ./scripts/fetchGitmoji.js",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
     "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
@@ -35,7 +34,8 @@
     "release": "semantic-release",
     "test:coverage": "jest --coverage",
     "test:dev": "jest --watch",
-    "test": "jest --maxWorkers 2"
+    "test": "jest --maxWorkers 2",
+    "theme:gitmoji": "./scripts/gitmoji/gitmojiInit.sh && yarn lint:fix"
   },
   "devDependencies": {
     "@babel/core": "7.13.8",
@@ -60,7 +60,7 @@
     "eslint-plugin-unicorn": "28.0.2",
     "fuzzy": "0.1.3",
     "global": "4.4.0",
-    "husky": "5.1.1",
+    "husky": "5.1.2",
     "inquirer": "8.0.0",
     "inquirer-list-search-prompt": "1.0.2",
     "is-ci": "3.0.0",
