@@ -1,4 +1,5 @@
 [ -n "$CI" ] && exit 0
 
+yarn pretty-quick --staged
 exec < /dev/tty
 node ./lib/cli.js --hook || true
