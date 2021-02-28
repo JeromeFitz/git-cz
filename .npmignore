@@ -30,6 +30,7 @@ scripts/
 .prettierignore
 .prettierignore_staged
 .prettierrc.js
+lint-staged.config.js
 release.config.js
 renovate.json
 data/
