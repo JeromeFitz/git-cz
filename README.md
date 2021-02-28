@@ -253,7 +253,7 @@ A theme override for [gitmoji](https://gitmoji.dev/) is available as an **overri
 }
 ```
 
-You can `extend` this theme by pulling `./dist/themes/gitmoji.json` into your `changelog.config.js` and adding, refactoring as you see fit as well. (Via `yarn build:themes`)
+You can `extend` this theme by pulling `./dist/gitmoji.json` into your `changelog.config.js` and adding, refactoring as you see fit as well. (Via `yarn build:themes`)
 
 📝️ Note: `chore` is provided as a `git-cz` fallback for those that enjoy using it. Otherwise all current `git-cz` `default` have a 1:1 map to `gitmoji`.
 

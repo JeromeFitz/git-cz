@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const gitmoji = require('../lib/themes/gitmoji');
 
-const dataDirectory = path.join(__dirname, '..', 'dist', 'themes');
+const dataDirectory = path.join(__dirname, '..', 'dist');
 const dataFilename = path.resolve(dataDirectory, 'gitmoji.json');
 
 const buildThemes = async () => {
@@ -15,7 +15,7 @@ const buildThemes = async () => {
       throw err;
     }
     // eslint-disable-next-line no-console
-    console.log('🧡️  Gitmoji json import built for ./dist/themes/gitmoji.json');
+    console.log('🧡️  JSON export built for ./dist/gitmoji.json');
   });
 };
 
