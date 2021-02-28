@@ -1,8 +1,10 @@
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-
 # git-cz
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ![image](https://user-images.githubusercontent.com/9773803/49760520-fa6c6f00-fcc4-11e8-84c4-80727f071487.png)
+
+## Install
 
 ### Without installation
 
@@ -69,6 +71,7 @@ Below is default config:
 module.exports = {
   disableEmoji: false,
   format: '{type}{scope}: {emoji}{subject}',
+  gitmoji: false,
   list: ['test', 'feat', 'fix', 'chore', 'docs', 'refactor', 'style', 'ci', 'perf'],
   maxMessageLength: 64,
   minMessageLength: 3,
@@ -229,7 +232,15 @@ Select the packages the commit affected.
 
 The footer is the place to reference any tasks related to this commit.
 
-## Why this Fork?
+### gitmoji
+
+Some people prefer [gitmoji](https://gitmoji.dev/) and `git-cz` provides an **override** that allows you to plug in
+
+#### Please Note
+
+This is further customizable via your own `changelog.config.js`. Feel free to look at this example at how to customize your own `changelog.config.js`.
+
+## Why this Fork
 
 ```bash
 npm i -g git-cz
