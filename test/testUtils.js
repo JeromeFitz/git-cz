@@ -12,7 +12,7 @@ exports.runCLI = (args = []) => {
 
   const {promise, stdin} = spawn('node', [CLI_PATH, ...args]);
 
-  const getResult = async() => {
+  const getResult = async () => {
     const {stdout} = await promise;
 
     return stdout;
@@ -20,7 +20,7 @@ exports.runCLI = (args = []) => {
 
   const delay = () => new Promise((resolve) => setTimeout(resolve, 500));
 
-  const write = async(inputs = []) => {
+  const write = async (inputs = []) => {
     for (const input of inputs) {
       stdin.write(input);
       await delay();

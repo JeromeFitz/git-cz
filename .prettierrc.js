@@ -1,3 +1,4 @@
+/* eslint-disable filenames/match-regex */
 module.exports = {
   arrowParens: 'always',
   bracketSpacing: false,
@@ -6,5 +7,5 @@ module.exports = {
   semi: true,
   singleQuote: true,
   tabWidth: 2,
-  trailingComma: 'es5',
+  trailingComma: 'all',
 };
