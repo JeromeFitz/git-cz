@@ -11,8 +11,6 @@ module.exports = {
   ],
   extends: [],
   plugins: [
-    // @note(deprecate) move to release notes for multi-channel releases
-    // '@semantic-release/changelog',
     [
       '@semantic-release/commit-analyzer',
       {
