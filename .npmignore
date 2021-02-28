@@ -19,3 +19,7 @@ yarn.lock
 /test/
 /build/
 /docs/
+# fork
+.env
+.github/
+.husky/
