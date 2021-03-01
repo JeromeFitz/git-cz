@@ -1,6 +1,6 @@
 {
   "name": "@jeromefitz/git-cz",
-  "version": "5.0.0-canary.9",
+  "version": "5.0.0-canary.10",
   "description": "Semantic emojified git commit, git-cz.",
   "main": "dist/cz.js",
   "bin": {
