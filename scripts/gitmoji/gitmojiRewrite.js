@@ -1,7 +1,7 @@
 /* eslint-disable object-property-newline */
 // eslint-disable-next-line id-match
 const _find = require('lodash/find');
-const items = require('../../data/gitmojis.json').gitmojis;
+const items = require('../../data/gitmoji/init.json').gitmojis;
 
 // @note pseudo-map to conventional-commits
 const rewrites = [
@@ -110,6 +110,6 @@ const gitmoji = async () => {
 gitmoji();
 
 module.exports = {
-  list,
-  types,
+  gitmojiList: list,
+  gitmojiTypes: types,
 };

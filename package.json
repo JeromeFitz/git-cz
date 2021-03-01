@@ -20,11 +20,10 @@
     "build:binaries": "mkdirp binaries && pkg lib/cli.js --out-path binaries",
     "build:cli": "browserify --node -o dist/cli.js lib/cli.js",
     "build:cz": "browserify --node -o dist/cz.js --standalone prompter lib/cz.js",
-    "build:themes": "node ./scripts/buildThemes.js",
     "build:readme": "mmarkdown",
-    "build": "yarn build:cli && yarn build:cz && yarn build:themes",
+    "build": "yarn build:cli && yarn build:cz",
     "clean": "rimraf dist binaries",
-    "fetch:gitmojis": "node ./scripts/fetchGitmoji.js && yarn lint:fix",
+    "commit": "yarn git-cz",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
     "lint:fix": "yarn lint:prettier --write && yarn lint:eslint --fix",
     "lint:prettier": "prettier \"./*.{js,jsx,ts,tsx,json,md,mdx,css,html,yml,yaml,scss}\"",
@@ -36,7 +35,8 @@
     "release": "semantic-release",
     "test:coverage": "jest --coverage",
     "test:dev": "jest --watch",
-    "test": "jest --maxWorkers 2"
+    "test": "jest --maxWorkers 2",
+    "theme:gitmoji": "./scripts/gitmoji/gitmojiInit.sh && yarn lint:fix"
   },
   "devDependencies": {
     "@babel/core": "7.13.8",

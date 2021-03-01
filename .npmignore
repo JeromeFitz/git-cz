@@ -29,7 +29,7 @@ yarn.lock
 .prettierignore_staged
 .prettierrc.js
 CHANGELOG.md
-data/
+data/gitmoji/init.json
 lint-staged.config.js
 release.config.js
 renovate.json
