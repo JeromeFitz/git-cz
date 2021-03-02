@@ -20,7 +20,6 @@
     "build:binaries": "mkdirp binaries && pkg lib/cli.js --out-path binaries",
     "build:cli": "browserify --node -o dist/cli.js lib/cli.js",
     "build:cz": "browserify --node -o dist/cz.js --standalone prompter lib/cz.js",
-    "build:readme": "mmarkdown",
     "build": "yarn build:cli && yarn build:cz",
     "clean": "rimraf dist binaries",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
@@ -84,11 +83,5 @@
     "commitizen": {
       "path": "./dist/cz.js"
     }
-  },
-  "mmarkdown": {
-    "src": "./build/readme.md",
-    "out": "./README.md",
-    "scripts": "./build/readme.js",
-    "backup": false
   }
 }

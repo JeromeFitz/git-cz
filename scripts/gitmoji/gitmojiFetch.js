@@ -20,7 +20,7 @@ const gitmojiFetch = async () => {
       throw err;
     }
     // eslint-disable-next-line no-console
-    console.log('💛️  1. gitmojiFetch > init.json');
+    console.log('💛️  1. gitmojiFetch > ./data/gitmoji/init.json');
   });
 };
 
