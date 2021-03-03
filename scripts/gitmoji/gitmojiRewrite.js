@@ -71,7 +71,7 @@ const rewrites = [
   {from: 'coffin', to: 'rip'},
 ];
 
-const list = ['chore'];
+// @note default from git-cz
 const types = {
   chore: {
     code: ':computer_disk:',
@@ -91,7 +91,6 @@ const gitmoji = async () => {
   // eslint-disable-next-line array-callback-return
   await items.map((item) => {
     const rewrite = _find(rewrites, {from: item.name});
-    list.push(rewrite.to);
     types[rewrite.to] = {
       code: item.code,
       description: item.description,
@@ -110,6 +109,11 @@ const gitmoji = async () => {
 gitmoji();
 
 module.exports = {
-  gitmojiList: list,
-  gitmojiTypes: types,
+  types: Object.keys(types)
+    .sort()
+    .reduce((type, key) => {
+      type[key] = types[key];
+
+      return type;
+    }, {}),
 };

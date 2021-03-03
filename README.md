@@ -71,8 +71,6 @@ Below is default config:
 module.exports = {
   disableEmoji: false,
   format: '{type}{scope}: {emoji}{subject}',
-  gitmoji: false,
-  list: ['test', 'feat', 'fix', 'chore', 'docs', 'refactor', 'style', 'ci', 'perf'],
   maxMessageLength: 64,
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
@@ -213,10 +211,10 @@ These are not `${type}` so in your configuration if you need to pass dynamically
 
 📝️ Note: If your configuration file _is_ dynamic and you want to override these change yours at run time to `${type}` 😅️. These fields are only replaced _if_ they exist. Heck, you can have a format of: `format: "static(hard): code value"` if you really want (please do not).
 
-📝️ Note: If you want to keep emojis in the cli and not in your code commits you can do so with:
+📝️ Note: If you want to keep emojis in the cli and not in your code commits you can do so by not `disable-emoji|disableEmoji` and not putting `{emoji}` in your format:
 
 ```bash
---disable-emoji --format "{type}{scope}: {subject}"
+--format "{type}{scope}: {subject}"
 ```
 
 Have fun in your console if you can't in your codebase. 🤣️
@@ -225,7 +223,7 @@ Have fun in your console if you can't in your codebase. 🤣️
 
 `git-cz` provides two themes out of the box: `default` and `gitmoji`.
 
-Themes are an opt-in feature. If noting is provided for `theme` it will fallback to `default`.
+Themes are an opt-in feature. If nothing is provided for `theme` it will fallback to `default`.
 
 ### Default
 
@@ -237,14 +235,14 @@ No customizations needed. These are the emojis you know and love from `git-cz`
 
 ### Gitmoji
 
-A theme override for [gitmoji](https://gitmoji.dev/) is available as an **override**.
+A theme for [gitmoji](https://gitmoji.dev/) is available as an **override**.
 
 - ✨️ feat
 - ♻️ refactor
 - etc.
 
 ```bash
--- theme gitmoji
+--theme gitmoji
 ```
 
 ```json
@@ -253,9 +251,9 @@ A theme override for [gitmoji](https://gitmoji.dev/) is available as an **overri
 }
 ```
 
-You can `extend` this theme by pulling `./dist/gitmoji.json` into your `changelog.config.js` and adding, refactoring as you see fit as well. (Via `yarn build:themes`)
+You can `extend` this theme by pulling `./dist/gitmoji/index.json` into your `changelog.config.js` and adding, refactoring as you see fit as well.
 
-📝️ Note: `chore` is provided as a `git-cz` fallback for those that enjoy using it. Otherwise all current `git-cz` `default` have a 1:1 map to `gitmoji`.
+📝️ Note: `chore` is provided as a `git-cz` fallback for those that enjoy using it. Otherwise all current `git-cz` => `default` have a 1:1 map to `gitmoji`.
 
 📝️ Note: This will override default types along with their emojis.
 
@@ -310,3 +308,19 @@ Installs in 0.6s vs 31.1s.
 npm i -g mol-conventional-changelog
 added 345 packages in 31.076s
 ```
+
+## Husky
+
+If you are using `husky@5.x` on your project that has `git-cz` as a local dependency please be cognizant of **locally installed binaries**:
+
+> If you were calling directly locally installed binaries, you need to run them via your package manager:
+
+```sh
+npx --no-install git-cz --hook || true
+```
+
+```sh
+yarn git-cz --hook || true
+```
+
+- ref: https://typicode.github.io/husky/#/?id=locally-installed-binaries

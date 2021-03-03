@@ -11,7 +11,7 @@ const dataFilename = path.resolve(dataDirectory, 'init.json');
 const gitmojiFetch = async () => {
   const response = await fetch(gitmojiUrl);
   const json = await response.json();
-  const data = await JSON.stringify(json, null, 4);
+  const data = await JSON.stringify(json, null, 2);
 
   // @todo(callback)
   // eslint-disable-next-line promise/prefer-await-to-callbacks
@@ -20,7 +20,7 @@ const gitmojiFetch = async () => {
       throw err;
     }
     // eslint-disable-next-line no-console
-    console.log('💛️  1. gitmojiFetch > init.json');
+    console.log('💚️  1. gitmojiFetch > ./data/gitmoji/init.json');
   });
 };
 

@@ -17,7 +17,7 @@ const gitmojiBuild = async () => {
       throw err;
     }
     // eslint-disable-next-line no-console
-    console.log('💛️  2. gitmojiBuild > index.json');
+    console.log('💛️  2. gitmojiBuild > ./data/gitmoji/index.json');
   });
 };
 
