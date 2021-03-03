@@ -4,11 +4,7 @@ const isCI = require('is-ci');
 !isCI && require('dotenv').config({path: './.env'});
 
 module.exports = {
-  branches: [
-    {name: 'main', prerelease: 'main'},
-    {name: 'master'},
-    {name: 'canary', prerelease: 'canary'},
-  ],
+  branches: [{name: 'main'}, {name: 'canary', prerelease: 'canary'}],
   extends: [],
   plugins: [
     [

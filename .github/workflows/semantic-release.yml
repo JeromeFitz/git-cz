@@ -3,12 +3,10 @@ on:
   pull_request:
     branches:
       - main
-      - master
       - canary
   push:
     branches:
       - main
-      - master
       - canary
 jobs:
   release:
