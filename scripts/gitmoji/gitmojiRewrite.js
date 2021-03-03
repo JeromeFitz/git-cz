@@ -109,5 +109,11 @@ const gitmoji = async () => {
 gitmoji();
 
 module.exports = {
-  types,
+  types: Object.keys(types)
+    .sort()
+    .reduce((type, key) => {
+      type[key] = types[key];
+
+      return type;
+    }, {}),
 };
