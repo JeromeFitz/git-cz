@@ -19,3 +19,18 @@ yarn.lock
 /test/
 /build/
 /docs/
+# fork
+.env
+.eslintignore
+.eslintrc.js
+.github/
+.husky/
+.prettierignore
+.prettierignore_staged
+.prettierrc.js
+CHANGELOG.md
+data/gitmoji/init.json
+lint-staged.config.js
+release.config.js
+renovate.json
+scripts/

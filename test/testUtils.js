@@ -4,16 +4,13 @@ const spawn = require('spawncommand');
 exports.keys = {
   down: '\u001B\u005B\u0042',
   enter: '\r',
-  up: '\u001B\u005B\u0041'
+  up: '\u001B\u005B\u0041',
 };
 
 exports.runCLI = (args = []) => {
   const CLI_PATH = path.join(__dirname, '/../lib/cli');
 
-  const {promise, stdin} = spawn('node', [
-    CLI_PATH,
-    ...args
-  ]);
+  const {promise, stdin} = spawn('node', [CLI_PATH, ...args]);
 
   const getResult = async () => {
     const {stdout} = await promise;
@@ -34,6 +31,6 @@ exports.runCLI = (args = []) => {
 
   return {
     getResult,
-    write
+    write,
   };
 };
