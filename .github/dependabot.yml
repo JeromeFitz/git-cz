@@ -12,8 +12,8 @@ updates:
     commit-message:
       # prefix: '⬆️ '
       # include: 'scope'
-      prefix: '⬆️ (deps): '
-      prefix-development: '⬆️ (deps-dev): '
+      prefix: 'chore(deps): 🤖 '
+      prefix-development: 'chore(deps-dev): 🤖 '
     target-branch: 'main'
     ignore:
       - dependency-name: '@types/node'
