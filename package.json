@@ -43,7 +43,7 @@
     "@semantic-release/release-notes-generator": "9.0.2",
     "any-shell-escape": "0.1.1",
     "browserify": "17.0.0",
-    "chai": "4.3.3",
+    "chai": "4.3.4",
     "chalk": "4.1.0",
     "commitizen": "4.2.3",
     "dotenv": "8.2.0",
